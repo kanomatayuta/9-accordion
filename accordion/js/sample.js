@@ -7,7 +7,6 @@ const contents = document.querySelectorAll(".accordion__content");
 // item初期値が0からtab.length(.accordion__tab-icon)の数だけ繰り返す。
 for (let item = 0; item < tab.length; item++) {
   // 質問タブをクリックしたら実行
-  console.log(item);
   tab[item].addEventListener("click", function () {
     // クリックした質問タブのactiveクラスを付け替える
     this.classList.toggle("active");
