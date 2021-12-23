@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/* 全体レイアウト
+--------------------------------------- */
+header {
+  text-align: center;
+}
+.wrap {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+img {
+  width: 100%;
+}
+li {
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+/* アコーディオン
+--------------------------------------- */
+.accordion__container {
+  max-width: 500px;
+  width: 90%;
+  margin: 20px auto 0;
+  border-top: 1px solid gainsboro;
+  border-bottom: 0;
+}
+.accordion__tab {
+  padding: 10px 20px;
+  position: relative;
+  border-top: 0;
+  border-bottom: 1px solid gainsboro;
+}
+.accordion__tab::after {
+  content: "";
+  border-right: 1px solid gainsboro;
+  text-align: left;
+  margin-left: 24rem;
+}
+.accordion__tab-icon {
+  cursor: pointer;
+}
+.accordion__tab-icon::after {
+  content: url(../img/icon/plus.svg);
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  right: 20px;
+}
+/* 非表示の状態にする */
+.accordion__content {
+  display: none;
+  padding: 10px 20px;
+  background: whitesmoke;
+  border-bottom: 1px solid gainsboro;
+  opacity: 1;
+  animation: Fade-In 1.5s;
+  -webkit-animation: Fade-In 1.5s; /*Chrome, Safari対応*/
+  -moz-animation:  Fade-In 1.5s; /*Firefox対応*/
+}
+@keyframes Fade-In {
+  0%{
+    opacity: 0.2;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@-webkit-keyframes Fade-In { /*Chrome, Safari対応*/
+  0% {
+    opacity: 0.2
+  }
+  100% {
+    opacity: 1
+  }
+}
+@-moz-keyframes Fade-In {  /*Firefox対応*/
+  0% {
+    opacity: 0.2
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+/* active */
+/* icon変更 */
+.accordion__tab-icon.active::after {
+  content: url(../img/icon/xmark.svg);
+  width: 7.5px;
+  height: 7.5px;
+}
+/* 表示 */
+.accordion__content.active {
+  display: block;
+}
